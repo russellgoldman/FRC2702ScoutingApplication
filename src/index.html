@@ -1,1 +1,112 @@
-<h1>This is a commit example</h1>
+<!DOCTYPE html>
+<html>
+<head>
+<title>2702 Scouting Form</title>
+</head>
+
+<body>
+  <form>
+    <div id="TeamInformation">
+      <h1>Team Information:</h1>
+      <h4>Team Number:
+        <input type="text" name="teamNumber" value="2702"/>
+      </h4>
+      <h4>Alliance Colour:<br />
+        <input type="radio" name="allianceColour" value="red" checked> Red<br />
+        <input type="radio" name="allianceColour" value="blue"> Blue
+      </h4>
+    </div>
+
+    <div id="Autonomous">
+      <h1>Autonomous:</h1>
+      <h2>Auto Line:</h2>
+        <input type="radio" name="autoline" value="true" checked> Crossed<br />
+        <input type="radio" name="autoline" value="false"> Not Crossed
+      <h2>Ownership:</h2>
+        <h3>Scale Activated:</h3>
+          <p>TODO</p>
+        <h3>Switch Activated:</h3>
+          <p>TODO</p>
+    </div>
+    <div id="Teleoperated">
+      <h1>Teleloperated:</h1>
+      <h2>Ownership:</h2>
+        <h3>Scale Activated:</h3>
+          <p>TODO</p>
+        <h3>Switch Activated:</h3>
+          <p>TODO</p>
+      <h2>Power Ups:</h2>
+        <h3>Cubes Scored In...</h3>
+          <h4>Levitate:
+            <input type="text" name="levitate" value="0"/>
+          </h4>
+          <h4>Force:
+            <input type="text" name="force" value="0"/>
+          </h4>
+          <h4>Boost:
+            <input type="text" name="boost" value="0"/>
+          </h4>
+        <h3>Power Up's Activated:</h3>
+          <h4>Levitate:<br />
+            <input type="radio" name="levitateActivated" value="true" checked> Activated<br />
+            <input type="radio" name="levitateActivated" value="false"> Not Activated
+          </h4>
+          <h4>Force:<br />
+            <input type="radio" name="forceActivated" value="true" checked> Activated<br />
+            <input type="radio" name="forceActivated" value="false"> Not Activated
+          </h4>
+          <h4>Boost:<br />
+            <input type="radio" name="boostActivated" value="true" checked> Activated<br />
+            <input type="radio" name="boostActivated" value="false"> Not Activated
+          </h4>
+      <h2>Endgame:</h2>
+      <h4>Parked:<br />
+        <input type="radio" name="parkAchieved" value="true" checked> Yes<br />
+        <input type="radio" name="parkAchieved" value="false"> No
+      </h4>
+      <h4>Climbed:<br />
+        <input type="radio" name="climbAchieved" value="true" checked> Yes<br />
+        <input type="radio" name="climbAchieved" value="false"> No
+      </h4>
+      <h2>Penalties:</h2>
+        <h4>Fouls:
+          <input type="text" name="foul" value="0"/>
+        </h4>
+        <h4>Tech Fouls:
+          <input type="text" name="techFoul" value="0"/>
+        </h4>
+        <h4>Yellow Card:<br />
+          <input type="radio" name="yellowCardReceived" value="true" checked> Received<br />
+          <input type="radio" name="yellowCardReceived" value="false"> Not Received
+        </h4>
+        <h4>Red Card:<br />
+          <input type="radio" name="redCardReceived" value="true" checked> Received<br />
+          <input type="radio" name="redCardReceived" value="false"> Not Received
+        </h4>
+        <h4>Disabled:<br />
+          <input type="radio" name="disabled" value="true" checked> Yes<br />
+          <input type="radio" name="disabled" value="false"> No
+        </h4>
+        <h4>Disqualified:<br />
+          <input type="radio" name="disqualified" value="true" checked> Yes<br />
+          <input type="radio" name="disqualified" value="false"> No
+        </h4>
+    </div>
+    <div id="PostMatch">
+      <h1>Post Match:</h1>
+        <h4>Result of Match:<br />
+          <input type="radio" name="winTieLoss" value="win" checked> Win<br />
+          <input type="radio" name="winTieLoss" value="tie"> Tie<br />
+          <input type="radio" name="winTieLoss" value="loss"> Loss
+        </h4>
+        <h4>Final Score:
+          <input type="text" name="finalScore" value="0"/>
+        </h4>
+        <h4>Comments (Maximum of # characters):<br />
+          <textarea name="comment" form="usrform">2702 yields a worthy machine and driver. A must have on any alliance!</textarea>
+        </h4>
+    </div>
+    <input type="submit">
+  </form>
+</body>
+</html>
