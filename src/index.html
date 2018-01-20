@@ -3,14 +3,17 @@
 <head>
 <title>2702 Scouting Form</title>
 </head>
+<script src="code.js"></script>
+<script src="qrcode.js"></script>
+
 <body>
-  <form>
+  <form id ="scoutForm">
     <div id="TeamInformation">
       <h1>Team Information:</h1>
       <h4>Team Number:
-        <input type="text" name="teamNumber" value="2702"/>
+        <input type="text" id="teamNumberId" name="teamNumber" value="2702"/>
       </h4>
-      <h4>Alliance Colour: 
+      <h4>Alliance Colour:
         <input type="radio" name="allianceColour" value="red" checked> Red
         <input type="radio" name="allianceColour" value="blue"> Blue
       </h4>
@@ -114,7 +117,8 @@
           <textarea name="comment" form="usrform">2702 yields a worthy machine and driver. A must have on any alliance!</textarea>
         </h4>
     </div>
-    <input type="submit">
   </form>
+  <button onclick="myFunction()">I'm Done</button>
+  <div id="qrcode"></div>
 </body>
 </html>
