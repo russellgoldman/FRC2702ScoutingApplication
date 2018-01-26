@@ -3,9 +3,13 @@ document.addEventListener("DOMContentLoaded", function(){
 var sliders = ["ownershipScaleId","ownershipSwitchId","teleScaleId","teleSwitchId"];
 
 for (var i = 0; i < sliders.length; i++) {
+  // get slider HTML object by id
   var slider = document.getElementById(sliders[i]);
+  // get span HTML object by id
   var output = document.getElementById(sliders[i] + 'Value');
+  // displaying slider value to browser
   output.innerHTML = slider.value;
+  // slider.oninput is run whenever the slider value is changed
   slider.oninput = function() {
     var output = document.getElementById(this.id + 'Value');
     output.innerHTML = this.value;
