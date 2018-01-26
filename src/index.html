@@ -27,27 +27,25 @@
         <input type="radio" name="autoline" value="false"> Not Crossed
       <h2>Ownership:</h2>
         <h3>Scale Activated: <span id="ownershipScaleIdValue"></span></h3>
-          <table border = "1">
+          <table border = "1" id="autoScale">
             <tr>
               <th>Scale Achieved</th>
               <th>Scale Forfeited</th>
             </tr>
             <tr>
-              <td></td>
-              <td></td>
+              <td><input type="text" id="teamNumberId"  value=""/></td>
+              <td><input type="text" id="teamNumberId" value=""/></td>
             </tr>
             <tr>
-              <td></td>
-              <td></td>
+              <td><input type="text" id="teamNumberId"  value=""/></td>
+              <td><input type="text" id="teamNumberId" value=""/></td>
             </tr>
             <tr>
-              <td></td>
-              <td></td>
+              <td><input type="text" id="teamNumberId"  value=""/></td>
+              <td><input type="text" id="teamNumberId"  value=""/></td>
             </tr>
           </table>
-          <button style="
-            width: 200px;
-            height: 20px;">Add row!</button>
+          <button type="button" style="width: 200px;height: 20px;" onclick="addRowToTable('autoScale')">Add row!</button>
           <!--<input type="range" min="1" max="100" value="50" id="ownershipScaleId">-->
         <h3>Switch Activated: <span id="ownershipSwitchIdValue"></h3>
           <table border = "1">

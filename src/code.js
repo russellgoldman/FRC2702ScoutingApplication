@@ -1,7 +1,7 @@
 // Sliders text.
 document.addEventListener("DOMContentLoaded", function(){
 var sliders = ["ownershipScaleId","ownershipSwitchId","teleScaleId","teleSwitchId"];
-
+/*
 for (var i = 0; i < sliders.length; i++) {
   // get slider HTML object by id
   var slider = document.getElementById(sliders[i]);
@@ -15,6 +15,7 @@ for (var i = 0; i < sliders.length; i++) {
     output.innerHTML = this.value;
   }
 }
+*/
 });
 
 function getRadioVal(form, name) {
@@ -32,6 +33,16 @@ function getRadioVal(form, name) {
 
 function joinText(elements){
   return elements.join('|');
+}
+
+function addRowToTable(tableName) {
+  console.log(tableName)
+    var table = document.getElementById(tableName);
+    var row = table.insertRow(-1);
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    cell1.innerHTML = '<input type="text" class="' + tableName + '" value=""/>';
+    cell2.innerHTML = '<input type="text" class="' + tableName + '" value=""/>';
 }
 
 function myFunction() {
