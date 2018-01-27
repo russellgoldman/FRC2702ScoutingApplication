@@ -1,3 +1,10 @@
+// presets
+const columns = 2;
+var autoScaleRows = 3;
+var autoSwitchRows = 3;
+var teleopScaleRows = 3;
+var teleopSwitchRows = 3;
+
 // Sliders text.
 document.addEventListener("DOMContentLoaded", function(){
 var sliders = ["ownershipScaleId","ownershipSwitchId","teleScaleId","teleSwitchId"];
@@ -19,19 +26,40 @@ for (var i = 0; i < sliders.length; i++) {
 
 var tables = ["autoScale","autoSwitch","teleopScale","teleopSwitch"];
 
-for (var j in tables) {
+var iterationCount = 0;
+// couldn't get the built-in way of finding the class name of an HTML object to work...
+for (var t in tables) {
+  // gets each table element individually
+  var table = document.getElementsByClassName(t);
+  console.log('outside');
+  var rows = 0;
+  switch(iterationCount) {
+    case 0:
+      rows = autoScaleRows;
+      break;
+    case 1:
+      rows = autoSwitchRows;
+      break;
+    case 2:
+      rows = teleopScaleRows;
+      break;
+    case 3:
+      rows = teleopSwitchRows;
+      break;
+  }
 
-  var elements = document.getElementsByClassName(j);
-  console.log('outside')
-  for (let i = 0; i < elements.length; i++) {
+  // accesses each cell in the table
+  for (let i = 0; i < columns * rows; i++) {
     console.log('inside');
-    var obj = elements[i];
-    obj.onchange = function() {
+    console.log("# of cells: ", columns * rows);
+    // attachs an event listener to each cell
+    table[i].onchange = function() {
       console.log(this.className)
       var output = document.getElementById(this.className + 'Value');
       output.innerHTML = GetValuesOfClass(this.className);
     }
   }
+  iterationCount++;
 }
 
 });
@@ -62,6 +90,22 @@ function addRowToTable(tableName) {
     var cell2 = row.insertCell(1);
     cell1.innerHTML = '<input type="text" class="' + tableName + '" value=""/>';
     cell2.innerHTML = '<input type="text" class="' + tableName + '" value=""/>';
+
+    // increment global table data lengths
+    switch(tableName) {
+      case "autoScale":
+        autoScaleRows++;
+        break;
+      case "autoSwitch":
+        autoSwitchRows++;
+        break;
+      case "teleopScale":
+        teleopScaleRows++;
+        break;
+      case "teleopSwitch":
+        teleopSwitchRows++;
+        break;
+    }
 }
 
 function GetValuesOfClass(className) {
@@ -72,10 +116,10 @@ function GetValuesOfClass(className) {
       let obj = elements[i];
       if (obj.value != '') {
         if(i % 2 == 0) {
-          temp_total = obj.value
+          temp_total = obj.value;
         } else {
-          total += (temp_total - obj.value)
-          temp_total = 0
+          total += (temp_total - obj.value);
+          temp_total = 0;
         }
       }
     }
@@ -85,16 +129,16 @@ function GetValuesOfClass(className) {
 
 function myFunction() {
   var form = document.getElementById('scoutForm');
-  var elements = []
-  elements.push(Date.now())
-  elements.push(document.getElementById("teamNumberId").value)
+  var elements = [];
+  elements.push(Date.now());
+  elements.push(document.getElementById("teamNumberId").value);
   elements.push(getRadioVal(form, "allianceColour"));
   elements.push(getRadioVal(form, "autoline"));
   GetValuesOfClass('autoScale');
-  //elements.push(document.getElementById("ownershipScaleId").value)
-  //elements.push(document.getElementById("ownershipSwitchId").value)
-  //elements.push(document.getElementById("teleScaleId").value)
-  //elements.push(document.getElementById("teleSwitchId").value)
+  elements.push(document.getElementById("ownershipScaleId").value)
+  elements.push(document.getElementById("ownershipSwitchId").value)
+  elements.push(document.getElementById("teleScaleId").value)
+  elements.push(document.getElementById("teleSwitchId").value)
   elements.push(getRadioVal(form, "levitate"));
   elements.push(getRadioVal(form, "force"));
   elements.push(getRadioVal(form, "boost"));
@@ -111,8 +155,8 @@ function myFunction() {
   elements.push(getRadioVal(form, "disabled"));
   elements.push(getRadioVal(form, "disqualified"));
   elements.push(getRadioVal(form, "winTieLoss"));
-  elements.push(document.getElementById("finalScoreId").value)
-  elements.push(document.getElementById("commentId").value)
+  elements.push(document.getElementById("finalScoreId").value);
+  elements.push(document.getElementById("commentId").value);
 
   document.getElementById("qrcode").innerHTML = "";
 
