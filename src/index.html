@@ -26,7 +26,7 @@
         <input type="radio" name="autoline" value="true" checked> Crossed<br />
         <input type="radio" name="autoline" value="false"> Not Crossed
       <h2>Ownership:</h2>
-        <h3>Scale Activated: <span id="ownershipScaleIdValue"></span></h3>
+        <h3>Scale Activated: <span id="autoScaleValue"></span></h3>
         <button type="button" style="width: 200px;height: 20px;" onclick="addRowToTable('autoScale')">Add row!</button>
         <table border = "1" id="autoScale">
             <tr>
@@ -34,20 +34,20 @@
               <th>Scale Forfeited</th>
             </tr>
             <tr>
-              <td><input type="text" id="teamNumberId"  value=""/></td>
-              <td><input type="text" id="teamNumberId" value=""/></td>
+              <td><input type="text" id="teamNumberId" class="autoScale" value=""/></td>
+              <td><input type="text" id="teamNumberId" class="autoScale" value=""/></td>
             </tr>
             <tr>
-              <td><input type="text" id="teamNumberId"  value=""/></td>
-              <td><input type="text" id="teamNumberId" value=""/></td>
+              <td><input type="text" id="teamNumberId" class="autoScale" value=""/></td>
+              <td><input type="text" id="teamNumberId" class="autoScale" value=""/></td>
             </tr>
             <tr>
-              <td><input type="text" id="teamNumberId"  value=""/></td>
-              <td><input type="text" id="teamNumberId"  value=""/></td>
+              <td><input type="text" id="teamNumberId" class="autoScale" value=""/></td>
+              <td><input type="text" id="teamNumberId" class="autoScale" value=""/></td>
             </tr>
           </table>
           <!--<input type="range" min="1" max="100" value="50" id="ownershipScaleId">-->
-        <h3>Switch Activated: <span id="ownershipSwitchIdValue"></h3>
+        <h3>Switch Activated: <span id="autoSwitchValue"></h3>
           <button type="button" style="width: 200px;height: 20px;" onclick="addRowToTable('autoSwitch')">Add row!</button>
           <table border = "1" id="autoSwitch">
             <tr>
@@ -55,16 +55,16 @@
               <th>Scale Forfeited</th>
             </tr>
             <tr>
-              <td><input type="text" id="teamNumberId"  value=""/></td>
-              <td><input type="text" id="teamNumberId" value=""/></td>
+              <td><input type="text" id="teamNumberId" class="autoSwitch" value=""/></td>
+              <td><input type="text" id="teamNumberId" class="autoScale" value=""/></td>
             </tr>
             <tr>
-              <td><input type="text" id="teamNumberId"  value=""/></td>
-              <td><input type="text" id="teamNumberId" value=""/></td>
+              <td><input type="text" id="teamNumberId" class="autoSwitch" value=""/></td>
+              <td><input type="text" id="teamNumberId" class="autoSwitch" value=""/></td>
             </tr>
             <tr>
-              <td><input type="text" id="teamNumberId"  value=""/></td>
-              <td><input type="text" id="teamNumberId"  value=""/></td>
+              <td><input type="text" id="teamNumberId" class="autoSwitch" value=""/></td>
+              <td><input type="text" id="teamNumberId" class="autoSwitch" value=""/></td>
             </tr>
           </table>
         <!--<input type="range" min="1" max="100" value="50" id="ownershipSwitchId">-->
@@ -72,7 +72,7 @@
     <div id="Teleoperated">
       <h1>Teleloperated:</h1>
       <h2>Ownership:</h2>
-        <h3>Scale Activated: <span id="teleScaleIdValue"></h3>
+        <h3>Scale Activated: <span id="teleopScaleValue"></h3>
           <button type="button" style="width: 200px;height: 20px;" onclick="addRowToTable('teleopScale')">Add row!</button>
           <table border = "1" id="teleopScale">
             <tr>
@@ -80,20 +80,20 @@
               <th>Scale Forfeited</th>
             </tr>
             <tr>
-              <td><input type="text" id="teamNumberId"  value=""/></td>
-              <td><input type="text" id="teamNumberId" value=""/></td>
+              <td><input type="text" id="teamNumberId" class="teleopScale" value=""/></td>
+              <td><input type="text" id="teamNumberId" class="teleopScale" value=""/></td>
             </tr>
             <tr>
-              <td><input type="text" id="teamNumberId"  value=""/></td>
-              <td><input type="text" id="teamNumberId" value=""/></td>
+              <td><input type="text" id="teamNumberId" class="telelopScale" value=""/></td>
+              <td><input type="text" id="teamNumberId" class="teleopScale" value=""/></td>
             </tr>
             <tr>
-              <td><input type="text" id="teamNumberId"  value=""/></td>
-              <td><input type="text" id="teamNumberId"  value=""/></td>
+              <td><input type="text" id="teamNumberId" class="teleopScale" value=""/></td>
+              <td><input type="text" id="teamNumberId" class="teleopScale" value=""/></td>
             </tr>
           </table>
           <!--<input type="range" min="1" max="100" value="50" id="teleScaleId">-->
-        <h3>Switch Activated: <span id="teleSwitchIdValue"></h3>
+        <h3>Switch Activated: <span id="teleopSwitchValue"></h3>
           <button type="button" style="width: 200px;height: 20px;" onclick="addRowToTable('teleopSwitch')">Add row!</button>
           <table border = "1" id="teleopSwitch">
             <tr>
@@ -101,16 +101,16 @@
               <th>Scale Forfeited</th>
             </tr>
             <tr>
-              <td><input type="text" id="teamNumberId"  value=""/></td>
-              <td><input type="text" id="teamNumberId" value=""/></td>
+              <td><input type="text" id="teamNumberId" class="teleopSwitch" value=""/></td>
+              <td><input type="text" id="teamNumberId" class="teleopSwitch" value=""/></td>
             </tr>
             <tr>
-              <td><input type="text" id="teamNumberId"  value=""/></td>
-              <td><input type="text" id="teamNumberId" value=""/></td>
+              <td><input type="text" id="teamNumberId" class="teleopSwitch" value=""/></td>
+              <td><input type="text" id="teamNumberId" class="teleopSwitch" value=""/></td>
             </tr>
             <tr>
-              <td><input type="text" id="teamNumberId"  value=""/></td>
-              <td><input type="text" id="teamNumberId"  value=""/></td>
+              <td><input type="text" id="teamNumberId" class="teleopSwitch" value=""/></td>
+              <td><input type="text" id="teamNumberId" class="teleopSwitch" value=""/></td>
             </tr>
           </table>
         <!--<input type="range" min="1" max="100" value="50" id="teleSwitchId">-->

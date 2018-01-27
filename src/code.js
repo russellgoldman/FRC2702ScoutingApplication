@@ -16,7 +16,27 @@ for (var i = 0; i < sliders.length; i++) {
   }
 }
 */
+
+var tables = ["autoScale","autoSwitch","teleopScale","teleopSwitch"];
+
+for (var j in tables) {
+
+  var elements = document.getElementsByClassName(j);
+  console.log('outside')
+  for (let i = 0; i < elements.length; i++) {
+    console.log('inside');
+    var obj = elements[i];
+    obj.onchange = function() {
+      console.log(this.className)
+      var output = document.getElementById(this.className + 'Value');
+      output.innerHTML = GetValuesOfClass(this.className);
+    }
+  }
+}
+
 });
+
+
 
 function getRadioVal(form, name) {
     var val;
@@ -36,13 +56,31 @@ function joinText(elements){
 }
 
 function addRowToTable(tableName) {
-  console.log(tableName)
     var table = document.getElementById(tableName);
     var row = table.insertRow(-1);
     var cell1 = row.insertCell(0);
     var cell2 = row.insertCell(1);
     cell1.innerHTML = '<input type="text" class="' + tableName + '" value=""/>';
     cell2.innerHTML = '<input type="text" class="' + tableName + '" value=""/>';
+}
+
+function GetValuesOfClass(className) {
+    var elements = document.getElementsByClassName(className);
+    let total = 0;
+    let temp_total = 0;
+    for (let i = 0; i < elements.length; i++) {
+      let obj = elements[i];
+      if (obj.value != '') {
+        if(i % 2 == 0) {
+          temp_total = obj.value
+        } else {
+          total += (temp_total - obj.value)
+          temp_total = 0
+        }
+      }
+    }
+    return total;
+
 }
 
 function myFunction() {
@@ -52,10 +90,11 @@ function myFunction() {
   elements.push(document.getElementById("teamNumberId").value)
   elements.push(getRadioVal(form, "allianceColour"));
   elements.push(getRadioVal(form, "autoline"));
-  elements.push(document.getElementById("ownershipScaleId").value)
-  elements.push(document.getElementById("ownershipSwitchId").value)
-  elements.push(document.getElementById("teleScaleId").value)
-  elements.push(document.getElementById("teleSwitchId").value)
+  GetValuesOfClass('autoScale');
+  //elements.push(document.getElementById("ownershipScaleId").value)
+  //elements.push(document.getElementById("ownershipSwitchId").value)
+  //elements.push(document.getElementById("teleScaleId").value)
+  //elements.push(document.getElementById("teleSwitchId").value)
   elements.push(getRadioVal(form, "levitate"));
   elements.push(getRadioVal(form, "force"));
   elements.push(getRadioVal(form, "boost"));
@@ -86,5 +125,5 @@ function myFunction() {
   	correctLevel : QRCode.CorrectLevel.H
   });
   window.scrollTo(0, 0);
-  alert(elements);
+  //alert(elements);
 }
