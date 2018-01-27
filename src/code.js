@@ -1,33 +1,13 @@
-// Sliders text.
 document.addEventListener("DOMContentLoaded", function(){
 var sliders = ["ownershipScaleId","ownershipSwitchId","teleScaleId","teleSwitchId"];
-/*
-for (var i = 0; i < sliders.length; i++) {
-  // get slider HTML object by id
-  var slider = document.getElementById(sliders[i]);
-  // get span HTML object by id
-  var output = document.getElementById(sliders[i] + 'Value');
-  // displaying slider value to browser
-  output.innerHTML = slider.value;
-  // slider.oninput is run whenever the slider value is changed
-  slider.oninput = function() {
-    var output = document.getElementById(this.id + 'Value');
-    output.innerHTML = this.value;
-  }
-}
-*/
 
 var tables = ["autoScale","autoSwitch","teleopScale","teleopSwitch"];
 
-for (var j in tables) {
-
+for (var j of tables) {
   var elements = document.getElementsByClassName(j);
-  console.log('outside')
   for (let i = 0; i < elements.length; i++) {
-    console.log('inside');
     var obj = elements[i];
     obj.onchange = function() {
-      console.log(this.className)
       var output = document.getElementById(this.className + 'Value');
       output.innerHTML = GetValuesOfClass(this.className);
     }
@@ -36,12 +16,9 @@ for (var j in tables) {
 
 });
 
-
-
 function getRadioVal(form, name) {
     var val;
     var radios = form.elements[name];
-
     for (var i=0, len=radios.length; i<len; i++) {
         if ( radios[i].checked ) {
             val = radios[i].value;
@@ -51,7 +28,7 @@ function getRadioVal(form, name) {
     return val;
 }
 
-function joinText(elements){
+function joinText(elements) {
   return elements.join('|');
 }
 
@@ -60,8 +37,22 @@ function addRowToTable(tableName) {
     var row = table.insertRow(-1);
     var cell1 = row.insertCell(0);
     var cell2 = row.insertCell(1);
-    cell1.innerHTML = '<input type="text" class="' + tableName + '" value=""/>';
-    cell2.innerHTML = '<input type="text" class="' + tableName + '" value=""/>';
+    var input1 = document.createElement("input");
+    input1.type = "text";
+    input1.className = tableName;
+    var input2 = document.createElement("input");
+    input2.type = "text";
+    input2.className = tableName;
+    cell1.appendChild(input1);
+    cell2.appendChild(input2);
+    input1.onchange = function() {
+      var output = document.getElementById(this.className + 'Value');
+      output.innerHTML = GetValuesOfClass(this.className);
+    }
+    input2.onchange = function() {
+      var output = document.getElementById(this.className + 'Value');
+      output.innerHTML = GetValuesOfClass(this.className);
+    }
 }
 
 function GetValuesOfClass(className) {
@@ -80,7 +71,6 @@ function GetValuesOfClass(className) {
       }
     }
     return total;
-
 }
 
 function myFunction() {
@@ -90,11 +80,12 @@ function myFunction() {
   elements.push(document.getElementById("teamNumberId").value)
   elements.push(getRadioVal(form, "allianceColour"));
   elements.push(getRadioVal(form, "autoline"));
-  GetValuesOfClass('autoScale');
-  //elements.push(document.getElementById("ownershipScaleId").value)
-  //elements.push(document.getElementById("ownershipSwitchId").value)
-  //elements.push(document.getElementById("teleScaleId").value)
-  //elements.push(document.getElementById("teleSwitchId").value)
+
+  elements.push(GetValuesOfClass('autoScale'));
+  elements.push(GetValuesOfClass('autoSwitch'));
+  elements.push(GetValuesOfClass('teleopScale'));
+  elements.push(GetValuesOfClass('teleopSwitch'));
+
   elements.push(getRadioVal(form, "levitate"));
   elements.push(getRadioVal(form, "force"));
   elements.push(getRadioVal(form, "boost"));
@@ -125,5 +116,4 @@ function myFunction() {
   	correctLevel : QRCode.CorrectLevel.H
   });
   window.scrollTo(0, 0);
-  //alert(elements);
 }
