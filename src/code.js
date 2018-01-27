@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function(){
-var sliders = ["ownershipScaleId","ownershipSwitchId","teleScaleId","teleSwitchId"];
 
 var tables = ["autoScale","autoSwitch","teleopScale","teleopSwitch"];
 
@@ -63,10 +62,10 @@ function GetValuesOfClass(className) {
       let obj = elements[i];
       if (obj.value != '') {
         if(i % 2 == 0) {
-          temp_total = obj.value
+          temp_total = obj.value;
         } else {
-          total += (temp_total - obj.value)
-          temp_total = 0
+          total += (temp_total - obj.value);
+          temp_total = 0;
         }
       }
     }
@@ -75,9 +74,9 @@ function GetValuesOfClass(className) {
 
 function myFunction() {
   var form = document.getElementById('scoutForm');
-  var elements = []
-  elements.push(Date.now())
-  elements.push(document.getElementById("teamNumberId").value)
+  var elements = [];
+  elements.push(Date.now());
+  elements.push(document.getElementById("teamNumberId").value);
   elements.push(getRadioVal(form, "allianceColour"));
   elements.push(getRadioVal(form, "autoline"));
 
@@ -102,8 +101,8 @@ function myFunction() {
   elements.push(getRadioVal(form, "disabled"));
   elements.push(getRadioVal(form, "disqualified"));
   elements.push(getRadioVal(form, "winTieLoss"));
-  elements.push(document.getElementById("finalScoreId").value)
-  elements.push(document.getElementById("commentId").value)
+  elements.push(document.getElementById("finalScoreId").value);
+  elements.push(document.getElementById("commentId").value);
 
   document.getElementById("qrcode").innerHTML = "";
 
