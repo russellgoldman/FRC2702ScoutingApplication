@@ -76,33 +76,23 @@ function myFunction() {
   var form = document.getElementById('scoutForm');
   var elements = [];
   elements.push(Date.now());
-  elements.push(document.getElementById("teamNumberId").value);
+  elements.push(document.getElementById('matchNumber').value);
+  elements.push(document.getElementById("teamNumber").value);
   elements.push(getRadioVal(form, "allianceColour"));
-  elements.push(getRadioVal(form, "autoline"));
-
-  elements.push(GetValuesOfClass('autoScale'));
-  elements.push(GetValuesOfClass('autoSwitch'));
-  elements.push(GetValuesOfClass('teleopScale'));
-  elements.push(GetValuesOfClass('teleopSwitch'));
-
-  elements.push(getRadioVal(form, "levitate"));
-  elements.push(getRadioVal(form, "force"));
-  elements.push(getRadioVal(form, "boost"));
-  elements.push(getRadioVal(form, "levitateActivated"));
-  elements.push(getRadioVal(form, "forceActivated"));
-  elements.push(getRadioVal(form, "boostActivated"));
-  elements.push(getRadioVal(form, "parkAchieved"));
-  elements.push(getRadioVal(form, "climbAchieved"));
-  elements.push(document.getElementById("foulId").value)
-  elements.push(document.getElementById("techFoulId").value)
-
-  elements.push(getRadioVal(form, "yellowCardReceived"));
-  elements.push(getRadioVal(form, "redCardReceived"));
-  elements.push(getRadioVal(form, "disabled"));
-  elements.push(getRadioVal(form, "disqualified"));
-  elements.push(getRadioVal(form, "winTieLoss"));
-  elements.push(document.getElementById("finalScoreId").value);
-  elements.push(document.getElementById("commentId").value);
+  elements.push(getRadioVal(form, "autoLine"));
+  elements.push(document.getElementById("autoSwitch").value);
+  elements.push(document.getElementById("autoScale").value);
+  elements.push(document.getElementById("autoCubesCollected").value);
+  elements.push(document.getElementById("teleopCubesCollected").value);
+  elements.push(document.getElementById("teleopSwitch").value);
+  elements.push(document.getElementById("teleopScale").value);
+  elements.push(document.getElementById("teleopExchange").value);
+  elements.push(getRadioVal(form, "climb"));
+  elements.push(getRadioVal(form, "support"));
+  elements.push(document.getElementById("fouls").value);
+  elements.push(document.getElementById("techFouls").value);
+  elements.push(getRadioVal(form, "cardReceived"));
+  elements.push(document.getElementById("comments").value);
 
   document.getElementById("qrcode").innerHTML = "";
 
@@ -115,4 +105,11 @@ function myFunction() {
   	correctLevel : QRCode.CorrectLevel.H
   });
   window.scrollTo(0, 0);
+}
+
+function valueChange(input_field,delta) {
+  var inputobject = document.getElementById(input_field);
+  var newValue = parseInt(inputobject.value) + delta;
+  inputobject.value = Math.max(newValue, 0);
+  return false;
 }

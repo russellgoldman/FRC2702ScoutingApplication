@@ -21,202 +21,114 @@ th {
 <body>
   <div id="divForm" style="float:left;margin:auto;">
   <form id ="scoutForm">
-    <div id="TeamInformation">
-      <h1>Team Information:</h1>
-      <h4>Team Number:
-        <input type="text" id="teamNumberId" name="teamNumber" value="2702"/>
+    <div id="preGame">
+      <h1>Pre Game</h1>
+      <h4>Match Number
+        <input type="text" id="matchNumber">
       </h4>
-      <h4>Alliance Colour:
+      <h4>Team Number
+        <input type="text" id="teamNumber" name="teamNumber" >
+      </h4>
+      <h4>Alliance Colour
         <input type="radio" name="allianceColour" value="red" checked> Red
         <input type="radio" name="allianceColour" value="blue"> Blue
       </h4>
     </div>
 
-    <div id="Autonomous">
-      <h1>Autonomous:</h1>
-      <h2>Auto Line:</h2>
-        <input type="radio" name="autoline" value="true" checked> Crossed<br />
-        <input type="radio" name="autoline" value="false"> Not Crossed
-      <h2>Ownership:</h2>
-        <h3>Scale Activated: <span id="autoScaleValue"></span></h3>
-        <button type="button" style="width: 200px;height: 20px;" onclick="addRowToTable('autoScale')">Add row!</button>
-        <table border = "1" id="autoScale">
-            <tr>
-              <th>Scale Achieved</th>
-              <th>Scale Forfeited</th>
-            </tr>
-            <tr>
-              <td><input type="text" id="teamNumberId" class="autoScale" value=""/></td>
-              <td><input type="text" id="teamNumberId" class="autoScale" value=""/></td>
-            </tr>
-            <tr>
-              <td><input type="text" id="teamNumberId" class="autoScale" value=""/></td>
-              <td><input type="text" id="teamNumberId" class="autoScale" value=""/></td>
-            </tr>
-            <tr>
-              <td><input type="text" id="teamNumberId" class="autoScale" value=""/></td>
-              <td><input type="text" id="teamNumberId" class="autoScale" value=""/></td>
-            </tr>
-          </table>
-          <!--<input type="range" min="1" max="100" value="50" id="ownershipScaleId">-->
-        <h3>Switch Activated: <span id="autoSwitchValue"></h3>
-          <button type="button" style="width: 200px;height: 20px;" onclick="addRowToTable('autoSwitch')">Add row!</button>
-          <table border = "1" id="autoSwitch">
-            <tr>
-              <th>Scale Achieved</th>
-              <th>Scale Forfeited</th>
-            </tr>
-            <tr>
-              <td><input type="text" id="teamNumberId" class="autoSwitch" value=""/></td>
-              <td><input type="text" id="teamNumberId" class="autoSwitch" value=""/></td>
-            </tr>
-            <tr>
-              <td><input type="text" id="teamNumberId" class="autoSwitch" value=""/></td>
-              <td><input type="text" id="teamNumberId" class="autoSwitch" value=""/></td>
-            </tr>
-            <tr>
-              <td><input type="text" id="teamNumberId" class="autoSwitch" value=""/></td>
-              <td><input type="text" id="teamNumberId" class="autoSwitch" value=""/></td>
-            </tr>
-          </table>
-        <!--<input type="range" min="1" max="100" value="50" id="ownershipSwitchId">-->
-    </div>
-    <div id="Teleoperated">
-      <h1>Teleloperated:</h1>
-      <h2>Ownership:</h2>
-        <h3>Scale Activated: <span id="teleopScaleValue"></h3>
-          <button type="button" style="width: 200px;height: 20px;" onclick="addRowToTable('teleopScale')">Add row!</button>
-          <table border = "1" id="teleopScale">
-            <tr>
-              <th>Scale Achieved</th>
-              <th>Scale Forfeited</th>
-            </tr>
-            <tr>
-              <td><input type="text" id="teamNumberId" class="teleopScale" value=""/></td>
-              <td><input type="text" id="teamNumberId" class="teleopScale" value=""/></td>
-            </tr>
-            <tr>
-              <td><input type="text" id="teamNumberId" class="teleopScale" value=""/></td>
-              <td><input type="text" id="teamNumberId" class="teleopScale" value=""/></td>
-            </tr>
-            <tr>
-              <td><input type="text" id="teamNumberId" class="teleopScale" value=""/></td>
-              <td><input type="text" id="teamNumberId" class="teleopScale" value=""/></td>
-            </tr>
-          </table>
-          <!--<input type="range" min="1" max="100" value="50" id="teleScaleId">-->
-        <h3>Switch Activated: <span id="teleopSwitchValue"></h3>
-          <button type="button" style="width: 200px;height: 20px;" onclick="addRowToTable('teleopSwitch')">Add row!</button>
-          <table border = "1" id="teleopSwitch">
-            <tr>
-              <th>Scale Achieved</th>
-              <th>Scale Forfeited</th>
-            </tr>
-            <tr>
-              <td><input type="text" id="teamNumberId" class="teleopSwitch" value=""/></td>
-              <td><input type="text" id="teamNumberId" class="teleopSwitch" value=""/></td>
-            </tr>
-            <tr>
-              <td><input type="text" id="teamNumberId" class="teleopSwitch" value=""/></td>
-              <td><input type="text" id="teamNumberId" class="teleopSwitch" value=""/></td>
-            </tr>
-            <tr>
-              <td><input type="text" id="teamNumberId" class="teleopSwitch" value=""/></td>
-              <td><input type="text" id="teamNumberId" class="teleopSwitch" value=""/></td>
-            </tr>
-          </table>
-        <!--<input type="range" min="1" max="100" value="50" id="teleSwitchId">-->
-      <h2>Power Ups:</h2>
-        <h3>Cubes Scored In...</h3>
-          <h4>Levitate:
-            <input type="radio" name="levitate" value="0" checked> 0
-            <input type="radio" name="levitate" value="1"> 1
-            <input type="radio" name="levitate" value="2"> 2
-            <input type="radio" name="levitate" value="3"> 3
-          </h4>
-          <h4>Force:
-            <input type="radio" name="force" value="0" checked> 0
-            <input type="radio" name="force" value="1"> 1
-            <input type="radio" name="force" value="2"> 2
-            <input type="radio" name="force" value="3"> 3
-          </h4>
-          <h4>Boost:
-            <input type="radio" name="boost" value="0" checked> 0
-            <input type="radio" name="boost" value="1"> 1
-            <input type="radio" name="boost" value="2"> 2
-            <input type="radio" name="boost" value="3"> 3
-          </h4>
-        <h3>Power Up's Activated:</h3>
-          <h4>Levitate:<br />
-            <input type="radio" name="levitateActivated" value="true" checked> Activated<br />
-            <input type="radio" name="levitateActivated" value="false"> Not Activated
-          </h4>
-          <h4>Force:<br />
-            <input type="radio" name="forceActivated" value="true" checked> Activated<br />
-            <input type="radio" name="forceActivated" value="false"> Not Activated
-          </h4>
-          <h4>Boost:<br />
-            <input type="radio" name="boostActivated" value="true" checked> Activated<br />
-            <input type="radio" name="boostActivated" value="false"> Not Activated
-          </h4>
-      <h2>Endgame:</h2>
-      <h4>Parked:<br />
-        <input type="radio" name="parkAchieved" value="true" checked> Yes<br />
-        <input type="radio" name="parkAchieved" value="false"> No
-      </h4>
-      <h4>Climbed:<br />
-        <input type="radio" name="climbAchieved" value="true" checked> Yes<br />
-        <input type="radio" name="climbAchieved" value="false"> No
-      </h4>
-      <h2>Penalties:</h2>
-        <h4>Fouls:
-          <input type="text" name="foul" id="foulId" value="0"/>
+    <div id="auto">
+        <h1>Auto</h1>
+        <h4>Auto Line
+          <input type="radio" name="autoLine" value="1"> Yes
+          <input type="radio" name="autoLine" value="0" checked> No
         </h4>
-        <h4>Tech Fouls:
-          <input type="text" name="techFoul" id="techFoulId" value="0"/>
+
+        <h4>Switch
+          <input type="text" id="autoSwitch" value="0">
+          <button onclick="valueChange('autoSwitch',1)" type="button"> + </button>
+          <button onclick="valueChange('autoSwitch',-1)" type="button"> - </button>
         </h4>
-        <h4>Yellow Card:<br />
-          <input type="radio" name="yellowCardReceived" value="true" checked> Received<br />
-          <input type="radio" name="yellowCardReceived" value="false"> Not Received
+        <h4>Scale
+          <input type="text" id="autoScale" value="0">
+          <button onclick="valueChange('autoScale',1)" type="button"> + </button>
+          <button onclick="valueChange('autoScale',-1)" type="button"> - </button>
         </h4>
-        <h4>Red Card:<br />
-          <input type="radio" name="redCardReceived" value="true" checked> Received<br />
-          <input type="radio" name="redCardReceived" value="false"> Not Received
-        </h4>
-        <h4>Disabled:<br />
-          <input type="radio" name="disabled" value="true" checked> Yes<br />
-          <input type="radio" name="disabled" value="false"> No
-        </h4>
-        <h4>Disqualified:<br />
-          <input type="radio" name="disqualified" value="true" checked> Yes<br />
-          <input type="radio" name="disqualified" value="false"> No
+        <h4>Cubes Collected
+          <input type="text" id="autoCubesCollected" value="0">
+          <button onclick="valueChange('autoCubesCollected',1)" type="button"> + </button>
+          <button onclick="valueChange('autoCubesCollected',-1)" type="button"> - </button>
         </h4>
     </div>
-    <div id="PostMatch">
-      <h1>Post Match:</h1>
-        <h4>Result of Match:<br />
-          <input type="radio" name="winTieLoss" value="win" checked> Win<br />
-          <input type="radio" name="winTieLoss" value="tie"> Tie<br />
-          <input type="radio" name="winTieLoss" value="loss"> Loss
+
+    <div id=teleop>
+        <h1>Teleop</h4>
+        <h4>Cubes Collected
+          <input type="text" id="teleopCubesCollected" value="0">
+          <button onclick="valueChange('teleopCubesCollected',1)" type="button"> + </button>
+          <button onclick="valueChange('teleopCubesCollected',-1)" type="button"> - </button>
         </h4>
-        <h4>Final Score:
-          <input type="text" name="finalScore" id="finalScoreId" value="0"/>
+        <h4>Switch
+          <input type="text" id="teleopSwitch" value="0">
+          <button onclick="valueChange('teleopSwitch',1)" type="button"> + </button>
+          <button onclick="valueChange('teleopSwitch',-1)" type="button"> - </button>
         </h4>
-        <h4>Comments (Maximum of # characters):<br />
-          <textarea name="comment" form="usrform" id="commentId">-</textarea>
+        <h4>Scale
+          <input type="text" id="teleopScale" value="0">
+          <button onclick="valueChange('teleopScale',1)" type="button"> + </button>
+          <button onclick="valueChange('teleopScale',-1)" type="button"> - </button>
+        </h4>
+        <h4>Exchange
+          <input type="text" id="teleopExchange" value="0">
+          <button onclick="valueChange('teleopExchange',1)" type="button"> + </button>
+          <button onclick="valueChange('teleopExchange',-1)" type="button"> - </button>
         </h4>
     </div>
+
+    <div id="endgame">
+          <h1>Endgame</h1>
+          <h4>Climb
+            <input type="radio" name="climb" value="1"> Yes
+            <input type="radio" name="climb" value="0" checked> No
+          </h4>
+          <h4>Support Other Robot
+            <input type="radio" name="support" value="2"> Two
+            <input type="radio" name="support" value="1"> One
+            <input type="radio" name="support" value="0" checked> None
+          </h4>
+    </div>
+
+    <div id="other">
+          <h1>Other</h1>
+          <h4>Fouls
+            <input type="text" id="fouls" value="0">
+            <button onclick="valueChange('fouls',1)" type="button"> + </button>
+            <button onclick="valueChange('fouls',-1)" type="button"> - </button>
+          </h4>
+          <h4>Tech Fouls
+            <input type="text" id="techFouls" value="0">
+            <button onclick="valueChange('techFouls',1)" type="button"> + </button>
+            <button onclick="valueChange('techFouls',-1)" type="button"> - </button>
+          </h4>
+          <h4>Cards Received
+            <input type="radio" name="cardReceived" value="2"> Red
+            <input type="radio" name="cardReceived" value="1"> Yellow
+            <input type="radio" name="cardReceived" value="0" checked> None
+          <h4>
+          <h4>Comments</h4>
+            <textarea cols="40" rows="2" id="comments"> </textarea>
+    </div>
+    <input type="reset">
   </form>
   <button onclick="myFunction()" style="
-    margin-bottom: 100px;
-    width: 100px;
-    height: 30px;
-   ">I'm Done</button>
-  </div>
-  <div id="qrcode" style="
-    float: right;
-    margin-right: 155px;
-    margin-top: 100px;
-  "></div>
+      margin-bottom: 100px;
+      width: 100px;
+      height: 30px;
+     ">I'm Done</button>
+    </div>
+    <div id="qrcode" style="
+      float: right;
+      margin-right: 155px;
+      margin-top: 100px;
+    "></div>
+
 </body>
 </html>
