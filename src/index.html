@@ -21,8 +21,9 @@ th {
 <body>
   <div id="divForm" style="float:left;margin:auto;">
   <form id ="scoutForm">
-    <div id="preGame">
-      <h1>Pre Game</h1>
+
+    <h1 onclick="hideSection('preGame')">Pre Game</h1>
+    <div id="preGame" class="sections">
       <h4>Match Number
         <input type="text" id="matchNumber">
       </h4>
@@ -35,8 +36,8 @@ th {
       </h4>
     </div>
 
-    <div id="auto">
-        <h1>Auto</h1>
+    <h1 onclick="hideSection('auto')">Auto</h1>
+    <div id="auto" class="sections">
         <h4>Auto Line
           <input type="radio" name="autoLine" value="1"> Yes
           <input type="radio" name="autoLine" value="0" checked> No
@@ -59,8 +60,8 @@ th {
         </h4>
     </div>
 
-    <div id=teleop>
-        <h1>Teleop</h4>
+    <h1 onclick="hideSection('teleop')">Teleop</h1>
+    <div id="teleop" class="sections">
         <h4>Cubes Collected
           <input type="text" id="teleopCubesCollected" value="0">
           <button onclick="valueChange('teleopCubesCollected',1)" type="button"> + </button>
@@ -83,8 +84,8 @@ th {
         </h4>
     </div>
 
-    <div id="endgame">
-          <h1>Endgame</h1>
+    <h1 onclick="hideSection('endgame')">Endgame</h1>
+    <div id="endgame" class="sections">
           <h4>Climb
             <input type="radio" name="climb" value="1"> Yes
             <input type="radio" name="climb" value="0" checked> No
@@ -96,8 +97,8 @@ th {
           </h4>
     </div>
 
-    <div id="other">
-          <h1>Other</h1>
+    <h1 onclick="hideSection('other')">Other</h1>
+    <div id="other" class="sections">
           <h4>Fouls
             <input type="text" id="fouls" value="0">
             <button onclick="valueChange('fouls',1)" type="button"> + </button>
@@ -116,7 +117,7 @@ th {
           <h4>Comments</h4>
             <textarea cols="40" rows="2" id="comments"> </textarea>
     </div>
-    <input type="reset">
+    <input type="reset" onclick="hideSection('preGame')">
   </form>
   <button onclick="myFunction()" style="
       margin-bottom: 100px;
