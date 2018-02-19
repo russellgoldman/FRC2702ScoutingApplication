@@ -1,3 +1,4 @@
+var globalElements = null;
 document.addEventListener("DOMContentLoaded", function(){
 
 hideSection("preGame");
@@ -43,7 +44,7 @@ function myFunction() {
   elements.push(document.getElementById("comments").value);
 
   document.getElementById("qrcode").innerHTML = "";
-
+  globalElements = elements;
   var qrcode = new QRCode(document.getElementById("qrcode"), {
   	text: joinText(elements),
   	width: 256,
@@ -69,4 +70,19 @@ function hideSection(section) {
   }
   var shownSection =  document.getElementById(section);
   shownSection.style.display="block";
+}
+
+function qrColour(){
+  if (globalElements == null)
+    return;
+  document.getElementById('qrcode').innerHTML = "";
+  var qrcode = new QRCode(document.getElementById("qrcode"), {
+    text: joinText(globalElements),
+    width: 256,
+    height: 256,
+    colorDark : "#ff0000",
+    colorLight : "#ffffff",
+    correctLevel : QRCode.CorrectLevel.H
+  });
+  window.scrollTo(0, 0);
 }
